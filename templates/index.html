@@ -1,37 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>QuickMine AI</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+<meta charset="UTF-8">
+<title>QuickMine AI</title>
+<link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
 <div class="app">
 
-    <div class="sidebar">
-        <h2 class="logo">QuickMine AI</h2>
-        <button class="new-chat" onclick="createNewChat()">+ New Chat</button>
-        <div id="chat-history"></div>
-    </div>
-
-    <div class="chat-container">
-
-        <div id="hero">
-            <h1 class="hero-title">QuickMine AI</h1>
-            <p class="hero-sub">Fast AI powered by LLaMA</p>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="brand">
+            <span class="dot"></span>
+            <h1>QuickMine AI</h1>
+            <button id="toggleSidebar">≡</button>
         </div>
+        <button id="newChat" class="new-chat">+ New Chat</button>
+        <ul id="chatList" class="chat-list"></ul>
+    </aside>
 
-        <div id="chat-box"></div>
-
+    <!-- Chat Area -->
+    <main class="chat-area">
+        <div id="messages" class="messages empty">Start a chat or select one from the sidebar</div>
         <div class="input-area">
-            <textarea id="user-input" placeholder="Send a message..."></textarea>
-            <button id="send-btn" onclick="sendMessage()">➤</button>
+            <input id="input" placeholder="Send a message..." />
+            <button id="send">➤</button>
         </div>
+        <button id="openSidebarBtn">≡</button>
+    </main>
 
-    </div>
 </div>
 
-<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<script src="/static/script.js"></script>
 </body>
 </html>
+
+
